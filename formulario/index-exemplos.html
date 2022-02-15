@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <fieldset>
+            <legend>Formulário de Cadastro</legend>
+            <label>Nome</label>
+            <input type="text" name="nome" id="nome" autofocus/>
+
+            <label>Endereço</label>
+            <input type="text" name="endereco" id="endereco" required/>
+
+            <label>E-mail</label>
+            <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required/>
+
+            <label>Senha</label>
+            <input type="password" name="senha" id="senha" minlength="5" maxlength="8" required/>
+
+            <labe>URL</label>
+            <input type="url" name="url" id="url" required/>
+
+            <label>Cor</label>
+            <input type="color" name="cor" id="cor"/>
+
+            <label>Numero</label>
+            <input type="number" name="numero" id="numero"/>
+
+            <label>Data Nascimento</label>
+            <input type="date" name="nascimento" id="nascimento"/>
+
+            <label>Hora</label>
+            <input type="time" name="hora" id="hora"/>
+
+            <label>Mês</label>
+            <input type="month" name="mes" id="mes"/>
+
+            <label>Semana</label>
+            <input type="week" name="semana" id="semana"/>
+
+            <label>Data local</label>
+            <input type="datetime-local" name="dataLoca" id="dataLocal"/>
+
+
+            <label>
+                <input type="submit" id="bt_enviar" value="Enviar">
+                <!-- Para usar imagem como botão: <input name="bt_enviar" type="image" src="bt_enviar.png"/> -->
+                <input type="reset" id="bt_reset" value="Limpar">
+            </label>
+
+        </fieldset>
+    </form>
+</body>
+</html>
