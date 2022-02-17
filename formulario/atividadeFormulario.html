@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+
+    <script>
+    
+        function limpa_formulário_cep() {
+                //Limpa valores do formulário de cep.
+                document.getElementById('rua').value=("");
+                document.getElementById('bairro').value=("");
+                document.getElementById('cidade').value=("");
+                document.getElementById('uf').value=("");
+                document.getElementById('ibge').value=("");
+        }
+    
+        function meu_callback(conteudo) {
+            if (!("erro" in conteudo)) {
+                //Atualiza os campos com os valores.
+                document.getElementById('rua').value=(conteudo.logradouro);
+                document.getElementById('bairro').value=(conteudo.bairro);
+                document.getElementById('cidade').value=(conteudo.localidade);
+                document.getElementById('uf').value=(conteudo.uf);
+                document.getElementById('ibge').value=(conteudo.ibge);
+            } //end if.
+            else {
+                //CEP não Encontrado.
+                limpa_formulário_cep();
+                alert("CEP não encontrado.");
+            }
+        }
+            
+        function pesquisacep(valor) {
+    
+            //Nova variável "cep" somente com dígitos.
+            var cep = valor.replace(/\D/g, '');
+    
+            //Verifica se campo cep possui valor informado.
+            if (cep != "") {
+    
+                //Expressão regular para validar o CEP.
+                var validacep = /^[0-9]{8}$/;
+    
+                //Valida o formato do CEP.
+                if(validacep.test(cep)) {
+    
+                    //Preenche os campos com "..." enquanto consulta webservice.
+                    document.getElementById('rua').value="...";
+                    document.getElementById('bairro').value="...";
+                    document.getElementById('cidade').value="...";
+                    document.getElementById('uf').value="...";
+                    document.getElementById('ibge').value="...";
+    
+                    //Cria um elemento javascript.
+                    var script = document.createElement('script');
+    
+                    //Sincroniza com o callback.
+                    script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+    
+                    //Insere script no documento e carrega o conteúdo.
+                    document.body.appendChild(script);
+    
+                } //end if.
+                else {
+                    //cep é inválido.
+                    limpa_formulário_cep();
+                    alert("Formato de CEP inválido.");
+                }
+            } //end if.
+            else {
+                //cep sem valor, limpa formulário.
+                limpa_formulário_cep();
+            }
+        };
+    
+        </script>
+
+</head>
+<body>
+    <form action="" method="POST">
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+
+            <p><label for="">Nome completo: </label>
+            <input type="text" name="nome" id="nome" autofocus required></p>
+
+            <p><label for="">E-mail: </label>
+            <input type="email" name="email" id="email" required></p>
+
+            <p></p><label for="">Nascimento: </label>
+            <input type="date" name="nascimento" id="nascimento" required><p/>
+
+            <p></p><label for="">Sexo: 
+                <input type="radio" name="sexo" value="Masculino">Masculino
+            </label>
+            <label for="">
+                <input type="radio" name="sexo" value="Feminino">Feminino 
+            </label></p>
+            
+            <label for="">CPF: </label>
+            <input type="text" name="cpf" id="cpf" required>
+        </fieldset>
+        <fieldset>
+            <legend>Endereço</legend>
+
+             <!-- Inicio do formulario -->
+            <form method="get" action=".">
+             <label>Cep:
+            <input name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+               onblur="pesquisacep(this.value);" /></label><br />
+            <label>Rua:
+            <input name="rua" type="text" id="rua" size="60" /></label><br />
+            <label>Número:
+            <input type="text" name="numero" id="numero" required></label><br />
+            <label for="">Complemento: <input type="text" name="complemento" id="complemento"></label><br />
+            <label>Bairro:
+            <input name="bairro" type="text" id="bairro" size="40" /></label><br />
+            <label>Cidade:
+            <input name="cidade" type="text" id="cidade" size="40" /></label><br />
+            <label>Estado:
+            <input name="uf" type="text" id="uf" size="2" /></label><br />
+            <label>IBGE:
+            <input name="ibge" type="text" id="ibge" size="8" /></label><br />
+            </form>
+
+            
+        </fieldset>
+        <fieldset>
+            <legend>Dados de cobrança</legend>
+
+            <label for="">Escolha o método:</label>
+            <label for="">
+                <input type="radio" name="pagamento">Boleto
+            </label>
+            <label for="">
+                <input type="radio" name="pagamento" >Cartão de crédito
+            </label>
+            <label for="">
+                <input type="radio" name="pagamento"> Débito em conta
+            </label>
+            <fieldset>
+                <legend>Boleto</legend>
+                <label for="">Dia de vencimento:</label>
+                <input type="radio" name="dia" value="10">10
+                <input type="radio" name="dia" value="12">12
+                <input type="radio" name="dia" value="15">15
+                <input type="radio" name="dia" value="20">20            
+            </fieldset>
+            <fieldset>
+                <legend>Cartão de crédito</legend>
+
+                <label for="">Nome impresso no cartão: 
+                    <input type="text" name="nomeCartao" id="nomeCartao"></label><br />
+
+                <label for="">Número do cartão:
+                    <input type="text" name="numeroCartao" id="numeroCartao"></label><br/>
+
+                <label for="">Validade: 
+                    <input type="month" name="validade" id="validade"></label>
+                
+                <label for="">CVV: 
+                    <input type="text" name="cvv" id="cvv"></label>
+            </fieldset>
+            <fieldset>
+                <legend>Débito em conta</legend>
+                <label for="">Banco:</label>
+                <select name="banco" id="banco">
+                    <option value="bcoBrasil">Banco do Brasil</option>
+                    <option value="bradesco">Bradesco</option>
+                    <option value="itau">Itaú</option>
+                    <option value="caixa">Caixa</option>
+                    <option value="santander">Santander</option>
+                    <option value="nuban">Nubank</option>
+                </select><br />
+                <label for="">Agência: <input type="text" name="agencia" id="agencia" size="6"></label>
+                <label for="">Conta: <input type="conta" name="conta" id="conta"></label><br>
+                <label for="">Tipo:</label>
+                    <input type="radio" name="tipoConta" value="Corrente">Corrente
+                    <input type="radio" name="tipoConta" value="Poupança">Poupança
+                    <input type="radio" name="tipoConta" value="Salário">Salário
+            </fieldset>
+        </fieldset>
+    </form>
+    
+</body>
+</html>
