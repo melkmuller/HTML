@@ -13,6 +13,8 @@
         span{
             color: #0e1e66;
             font-weight: bold;
+            display: block;
+            width: 200px;
         }
         p span{
             color: #000000;
@@ -20,14 +22,23 @@
         body{
             background-color: #8c2b38;
         }
+        span.contato{
+            color:#273f73 ;
+            background-color: #3bb12b;
+        }
+        .titulo{
+            font-style: oblique;
+            font-weight: 700;
+            font-size: x-large;
+        }
     </style>
 </head>
 <body>
-    <p>Olá caro leitor!</p>
+    <p class="titulo">Olá caro leitor!</p>
     <hr/>
     <p style="font-style: italic;">
         Caso tenha alguma dúvida entre em contato com nosso departamento!<br>
-        <span>Telefone: </span>(48) 9888-5541<br/>
-        <span> E-mail: </span>senac@departamento.br</p>
+        <span>Telefone: </span> <span class="contato">(48) 9888-5541 </span><br/>
+        <span> E-mail: </span> <span class="contato"> senac@departamento.br</span></p>
 </body>
 </html>
