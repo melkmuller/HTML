@@ -1,0 +1,17 @@
+#tabuleiro{
+    border: 4px solid #2f00ff;
+    width: 640px;
+    height: 640px;
+}
+.par, .impar{
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+.par{
+    background-color: #000000;
+}
+
+.impar{
+    background-color: #ffffff;
+}
