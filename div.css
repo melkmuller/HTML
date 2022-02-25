@@ -1,0 +1,26 @@
+div{
+    border: 1px solid #000000;
+    width: 200px;
+    height: 200px;
+    float: left; /*Coloca os elementos um ao lado do outro, empilhados na esquerda, em vez de vertical*/
+    padding: 10px;
+    margin: 10px;
+}
+#total{
+    width: 500px;
+    height: auto;
+    width: auto;
+}
+#caixa01{
+    background-color: #675dec;
+}
+#caixa02{
+    background-color: #9aca29;
+}
+#caixa03{
+    background-color: #f5f5dc;
+    clear: left
+}
+#caixa04{
+    background-color: #7fffd4;
+}

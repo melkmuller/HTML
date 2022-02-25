@@ -1,0 +1,20 @@
+body{
+    background-color: #9ebeda;
+}
+#sup{
+    border: 1px solid #000000;
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    padding-top: 20px;
+}
+a{
+    display: inline-flex;
+}
+#sup a{
+    display: inline-flex;
+    background-color: #297ac2;
+    width: 150px;
+    height: 25px;
+    border: 1px solid #000000;
+}

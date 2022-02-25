@@ -1,0 +1,25 @@
+table{
+    border: 1px solid;
+    width: 60%;
+    margin: 10px 10px 0px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+}
+caption{
+    font-size: 30px;
+    font-weight: bold;
+}
+thead{
+    color: #b38344;
+}
+tr{
+    height: 30px;
+}
+tbody tr:hover{
+    background-color: #87fa1b;
+    cursor: pointer;
+}
+tr:nth-child(even){ /* coloca cores nas linhas pares, ou nas linhas ímpares (odd) */
+    background-color: #e9e8eb;
+}
