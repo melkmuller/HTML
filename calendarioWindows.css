@@ -60,7 +60,7 @@
     box-sizing: border-box;
     border: 5px solid #322770;
 }
-#rodapé1{
+.rodapé1{
     display: inline-flex;
     height: 90px;
 }
@@ -80,7 +80,7 @@
     height: 90px;
     margin-top: 10px;
 }
-#rodapé2{
+.rodapé2{
     color: #f0f8ff;
     font-size: 25px;
     font-family: sans-serif;
@@ -95,18 +95,20 @@
     font-size: 21px;
     font-family: sans-serif;
 }
-#rodapé3{
+.rodapé3{
     height: 200px;
+    vertical-align: middle;
+    display: inline-block;
 }
 #comecarAgora{
     color: #f0f8ff;
     height: 50px;
-    width: 100px;
+    width: 350px;
     background-color: #7663dd;
-    margin-top: 20px;
     margin-left: 130px;
-    display: inline-block;
-    justify-content: center;
-    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+
+    
     
 }
