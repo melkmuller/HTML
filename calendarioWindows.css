@@ -58,28 +58,55 @@
 #hoje{
     background-color: #6550df;
     box-sizing: border-box;
-    border: 5px solid #190742;
+    border: 5px solid #322770;
+}
+#rodapé1{
+    display: inline-flex;
+    height: 90px;
 }
 #hojeBottom{
     color: #f0f8ff;
-    font-size: 25px;
+    font-size: 22px;
     font-family: sans-serif;
-    height: 50px;
-    width: 600px;
+    width: 580px;
+    height: 60px;
     padding-left: 30px;
     padding-top: 30px;
 }
-#rodapé{
-    display: inline-flex;
-    width: 700px;
-    height: 300px;
-}
 #mais{
-    margin-right: 80px;
     font-size: 50px;
     color: #f0f8ff;
-    padding-top: 10px;
+    width: 60px;
+    height: 90px;
+    margin-top: 10px;
+}
+#rodapé2{
+    color: #f0f8ff;
+    font-size: 25px;
+    font-family: sans-serif;
+    display: inline-flex;  
+    height: 60px;
 }
 #figuraCalendario{
-    width: 60px;
+    width: 100px;
+    padding-left: 30px;
+}
+#configure{
+    font-size: 21px;
+    font-family: sans-serif;
+}
+#rodapé3{
+    height: 200px;
+}
+#comecarAgora{
+    color: #f0f8ff;
+    height: 50px;
+    width: 100px;
+    background-color: #7663dd;
+    margin-top: 20px;
+    margin-left: 130px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    
 }
