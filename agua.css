@@ -4,10 +4,11 @@ body{
     margin-right: auto;
     margin-top: 0px;
 }
-#azul{
+.azul{
     width: 100%;
     height: 170px;
     background-color: #12129b;
+    float: left;
 }
 .caixaSuperior{
     width: 212px;
@@ -15,6 +16,7 @@ body{
     float: left;
     margin-left: 75px;
     margin-top: 50px;
+    
 }
 .caixaSuperior h1{
     color: #ffffff;
@@ -41,12 +43,15 @@ body{
     width: 100%;
     height: 170px;
     background-color: #259b43;
+    float: left;
+    
 }
 .diagonalVerde{
     width: 80px;
     height: 170px;
-    background-color: #034603;
+    background-color: #910d5a;
     float: left;
+    
 }
 .texto{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -58,11 +63,49 @@ body{
     margin-top: 75px;
     font-weight: bold;
     white-space: nowrap;
-    float: left;
+    
 
 }
 .caixa{
-    margin-left: 40px;
-    margin-top: -105.5px;
+    margin-left: -40px;
+    margin-top: -16px;
     float: left;
+    
+
+}.cx_verde ul li{
+    color: #ffffff;
+    list-style-image: url(imagens/gota.png);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#cx_cinza{
+    width: 100%;
+    height: 170px;
+    background-color: #9c9494;
+    float: left;
+    
+}
+.diagonal_cinza{
+    height: 170px;
+    width: 80px;
+    float: left;
+    background-color: #4b4bc2;
+}
+.diagonal_azul{
+    width: 80px;
+    height: 170px;
+    background-color: #dba239;
+    float: left;
+    text-align: center;
+}
+.laranja{
+    width: 100%;
+    height: 170px;
+    background-color: #c4b810;
+    float: left;
+}
+.diagonal_vermelha{
+    height: 170px;
+    width: 80px;
+    float: left;
+    background-color: #d66f0e;
 }
